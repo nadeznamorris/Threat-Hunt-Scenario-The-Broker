@@ -657,7 +657,30 @@ DeviceEvents
 **Flag:** `SharpChrome`
 
 ```
+DeviceEvents
+| where DeviceName == "as-pc1"
+| where TimeGenerated between (datetime(2026-01-15) .. datetime(2026-01-31))
+| where ActionType == "ClrUnbackedModuleLoaded"
+| project TimeGenerated, DeviceName, ActionType, InitiatingProcessCommandLine, AdditionalFields
+| sort by TimeGenerated asc
+```
+<br>
+<img width="1142" height="117" alt="image" src="https://github.com/user-attachments/assets/c5e40aea-7c78-4662-b144-a63cf6019458" /> <br><br>
 
+**Objective:** The credential theft tool was injected into a legitimate process.
 
+**Flag:** `notepad.exe`
 
+```
+DeviceEvents
+| where DeviceName == "as-pc1"
+| where TimeGenerated between (datetime(2026-01-15) .. datetime(2026-01-31))
+| where ActionType == "ClrUnbackedModuleLoaded"
+| project TimeGenerated, DeviceName, ActionType, InitiatingProcessCommandLine, InitiatingProcessFileName, AdditionalFields
+| sort by TimeGenerated asc
+```
+<br>
+<img width="1286" height="117" alt="image" src="https://github.com/user-attachments/assets/fbfda496-5fe1-489d-bab0-19e54633e0c9" />
+
+---
 
