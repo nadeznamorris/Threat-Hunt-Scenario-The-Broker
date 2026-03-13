@@ -12,16 +12,16 @@
 
 ---
 
-## **1. Findings**
+## 1. Findings
 
 ### **Key Indicators of Compromise (IOCs):**
 
 - **Attack Source IP:** `104.21.30.237`
-- **Compromised Account:** `as-pc1`
-- **Malicious File:** `notepad.exe`
-- **Persistence Mechanism:** 
-- **C2 Server:** 
-- **Exfiltration Destination:**
+- **Compromised Account:** `sophie.turner`, `david.mitchell`
+- **Malicious File:** `daniel_richardson_cv.pdf.exe`, `RuntimeBroker.exe`, `AnyDesk.exe`, `Shares.7z`
+- **Persistence Mechanism:** Scheduled task, Local backdoor account, Re-enabled built-in Administrator account, AnyDesk.exe configured with unattended password
+- **C2 Server:** `cdn.cloud-endpoint.net` (primary C2), `sync.cloud-endpoint.net` (secondary payload hosting)
+- **Exfiltration Destination:** 
 
 ### **KQL Queries Used:**
 
@@ -704,3 +704,8 @@ The attacker accessed the financial document `BACS_Payments_Dec2025.ods` from a 
 
 ---
 
+**Report Status:** Complete
+
+**Next Review:** 28th Febuary 2026
+
+**Distribution:** Cyber Range
